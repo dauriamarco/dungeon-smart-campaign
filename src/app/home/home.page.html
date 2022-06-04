@@ -1,0 +1,122 @@
+<div class="dashboard page-content">
+  <div class="dashboard-left">
+    <div class="container">
+      <div class="container-header">
+        <h3>
+          Character
+        </h3>
+        <ion-icon name="person-circle"></ion-icon>
+      </div>
+      <div class="container-content">
+        <div class="dashboard__avatar"></div>
+        <div class="dashboard__character-box">
+          <dsc-character-box></dsc-character-box>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dashboard-notes">
+        <div class="container-header">
+          <h3>
+            Notes
+          </h3>
+          <ion-icon name="reader-outline"></ion-icon>
+        </div>
+        <div class="container-content">
+          <dsc-quick-notes [notes]="notes" (quickNoteSubmitted)="onQuickNoteSubmit($event)"></dsc-quick-notes>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-features container">
+      <div class="container-header">
+        <h3>
+          Features and Traits
+        </h3>
+        <ion-icon name="reader-outline"></ion-icon>
+      </div>
+      <div class="container-content">
+        <dsc-note-input></dsc-note-input>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-right">
+    <div class="container">
+      <div class="container-header">
+        <h3>
+          Abilities & Statistics
+        </h3>
+        <ion-icon [name]="statsLocked ? 'lock-closed' : 'lock-open-outline'" (click)="toggleStatsLocked()"></ion-icon>
+      </div>
+      <div class="container-content">
+        <ng-container *ngFor="let stat of stats">
+          <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dashboard-additional">
+        <div class="container-content">
+          <ng-container *ngFor="let stat of additionalStats">
+            <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dashboard-saving-throws">
+        <div class="container-header">
+          <h3>
+            Saving Throws
+          </h3>
+          <ion-icon name="dice-outline"></ion-icon>
+        </div>
+        <div class="container-content">
+          <ng-container *ngFor="let item of savingThrows; index as i">
+            <div class="dashboard__checkbox">
+              <ion-item>
+                <ion-checkbox [checked]="item.checked" color="dark"></ion-checkbox>
+                <ion-label>{{item.name}}</ion-label>
+              </ion-item>
+              <input
+                  type="number"
+                  placeholder="0"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="1">
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="dashboard-saving-throws">
+        <div class="container-header">
+          <h3>
+            Skills
+          </h3>
+          <ion-icon name="library"></ion-icon>
+        </div>
+        <div class="container-content">
+          <ng-container *ngFor="let item of skills">
+            <div class="dashboard__checkbox">
+              <ion-item>
+                <ion-checkbox [checked]="item.checked"></ion-checkbox>
+                <ion-label>{{item.name}}</ion-label>
+              </ion-item>
+              <input
+                  type="number"
+                  placeholder="0"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="1">
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

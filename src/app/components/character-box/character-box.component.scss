@@ -1,0 +1,107 @@
+.character-box {
+  color: var(--ion-color-light-fixed);
+  background-color: var(--ion-color-dark-fixed-shade);
+  overflow: hidden;
+
+  & > .tag {
+    --sm-tag-background: var(--ion-color-primary-rgb);
+  }
+
+  .tag-group {
+    display: flex;
+    overflow: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .container-content {
+    .character-bio {
+      grid-column: span 7;
+
+      a {
+        display: block;
+        width: fit-content;
+        margin: 1rem 0 0.5rem 0;
+        border-bottom: 1px solid currentColor;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .container-footer {
+    position: relative;
+
+    .tag-big {
+      font-size: 1.75rem;
+      font-weight: 700;
+      --sm-tag-background: var(--ion-color-primary-rgb);
+
+      div:last-child {
+        font-size: 0.75rem;
+        font-weight: 400;
+      }
+    }
+
+    .character_inspiration {
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      width: 75px;
+      height: 75px;
+      background-image: url("/assets/images/dungeon-stat-inspiration.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      filter: drop-shadow(0 0 0.75rem rgba(var(--ion-color-dark-fixed-rgb), 0.25));
+
+      &::before {
+        content: "INSPIRATION POINTS";
+        opacity: 0;
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        transform: translate(60px, -50%);
+        left: -125px;
+        padding: 0.25rem;
+        background-color: var(--ion-color-dark-fixed);
+        border-radius: 4px;
+        font-size: 0.75rem;
+        transition: var(--dsc-transition);
+        transition-delay: 250ms;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+          transform: translate(0, -50%);
+        }
+      }
+
+      input[type="number"] {
+        cursor: pointer;
+        text-align: center;
+        background: none;
+        border: none;
+        outline: none;
+
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 100%;
+        color: var(--ion-color-light-fixed);
+        height: 75px;
+        font-size: 2.25rem;
+        font-weight: 900;
+
+        &:focus {
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

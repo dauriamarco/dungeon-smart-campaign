@@ -1,0 +1,45 @@
+<div class="quick-note-wrapper">
+  <form (ngSubmit)="onSubmit(quickNoteForm)" #quickNoteForm="ngForm" autocomplete="off">
+    <input id="quick-note-title" type="text" name="quickNoteTitle" placeholder="Title" [(ngModel)]="quickNote.title">
+    <textarea id="quickNote" name="quickNote" rows="5" placeholder="Quick note here" [(ngModel)]="quickNote.content"></textarea>
+    <button type="submit" class="button button-round">
+      <ion-icon name="add"></ion-icon>
+    </button>
+ </form>
+</div>
+<div #noteList class="notes-group" (click)="deselectNotes()">
+  <ng-container *ngFor="let note of notes; index as i">
+    <div [id]="'note-' + i" class="note" (click)="toggleSelected(note, $event)" [ngClass]="{'selected': note.selected, 'disappear': note.deleting}">
+    <div class="note__title ellipsis">{{note.title}}</div>
+    <div class="note__content">{{note.content}}</div>
+    <div class="note__edit__btn">
+      <button type="submit" class="button button-round" (click)="openContextMenu($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </button>
+      <ion-popover [trigger]="'note-' + i" triggerAction="context-menu" reference="event" [dismissOnSelect]="true">
+        <ng-template>
+          <div class="context-menu">
+            <ul>
+              <li>
+                <span>View</span><ion-icon name="reader-outline"></ion-icon>
+              </li>
+              <li>
+                <span>Edit</span><ion-icon name="create-outline"></ion-icon>
+              </li>
+              <li class="color-primary" (click)="addDeleteAnimation(note)">
+                <span>Delete</span><ion-icon name="trash-outline"></ion-icon>
+              </li>
+            </ul>
+          </div>
+        </ng-template>
+      </ion-popover>
+    </div>
+    <span class="note__tooltip tag">
+      01-02-2022 at 12:10
+    </span>
+  </div>
+  </ng-container>
+  <div *ngIf="!notes.length" class="note note-new">
+    <ion-icon name="add"></ion-icon>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="character-box container">
+  <div class="tag"><strong>Level 17</strong></div>
+  <div class="tag-group">
+    <div class="tag">Elf</div>
+    <div class="tag" (click)="openQuickInfoModal()">Warlock</div>
+    <div class="tag">School of Wisdom</div>
+  </div>
+  <div class="container-header">
+    <h3>
+      Fylson Nornelis
+    </h3>
+  </div>
+  <div class="container-content">
+    <div class="character-bio">
+      Lorem ipsum dolor sit amet,  adipiscing elit consectetur.
+      <a href="">
+        Read Full Bio
+      </a>
+    </div>
+  </div>
+  <div class="container-footer">
+    <div class="tag tag-big no-margin">
+      <div>100/100</div>
+      <div>HIT POINTS</div>
+    </div>
+    <div class="character_inspiration">
+      <input
+        type="number"
+        placeholder="0"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        maxlength="1"
+        value="0">
+    </div>
+  </div>
+</div>
+
+<ion-modal cssClass="quick-info-modal">
+  <ng-template>
+    <div class="modal__header">
+      <div class="modal__title">
+        <h1>{{warlockClass.name}}</h1>
+      </div>
+      <ion-icon name="close-outline" (click)="closeQuickInfoModal()"></ion-icon>
+    </div>
+    <div class="modal__content">
+      <ng-container *ngFor="let info of warlockClass.spellcasting.info">
+        <h5>{{info.name}}</h5>
+        <div class="info-desc">{{info.desc[0]}} {{info.desc[0]}}</div>
+      </ng-container>
+    </div>
+    <div class="modal__footer bg-blur">
+      <button class="button button-outline modal__cancel" (click)="closeQuickInfoModal()">CANCEL</button>
+      <button class="button modal__primary">MORE</button>
+    </div>
+  </ng-template>
+</ion-modal>

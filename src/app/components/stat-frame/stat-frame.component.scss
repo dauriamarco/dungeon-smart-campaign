@@ -1,0 +1,74 @@
+.stat__frame {
+  position: relative;
+  width: 129px;
+  height: 150px;
+  background-image: url("/assets/images/dungeon-stat-frame.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  filter: drop-shadow(0 0 0.75rem rgba(var(--ion-color-dark-fixed-rgb), 0.25));
+
+  input[type="number"] {
+    cursor: pointer;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .stat__name {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    color: #121212;
+    font-weight: 900;
+    padding: 0 0.75rem;
+  }
+
+  * {
+    &:nth-child(1) {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 100%;
+      color: var(--ion-color-light-fixed);
+      height: 75px;
+      font-size: 3rem;
+      font-weight: 900;
+
+      &:focus {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 1.5px;
+      height: 30px;
+      color: var(--ion-color-dark-fixed);
+      font-weight: 900;
+      width: 30px;
+      padding: 0;
+      border-radius: 50%;
+
+      &:focus {
+        -webkit-box-shadow: 0 0 0 4px var(--ion-color-dark-fixed-shade), 0 0 0 5px var(--ion-color-primary);
+        -moz-box-shadow: 0 0 0 4px var(--ion-color-dark-fixed-shade), 0 0 0 5px var(--ion-color-primary);
+        box-shadow: 0 0 0 4px var(--ion-color-dark-fixed-shade), 0 0 0 5px var(--ion-color-primary);
+      }
+    }
+  }
+  &.armor {
+    background-image: url("/assets/images/dungeon-stat-armor.svg");
+  }
+  &.speed {
+    background-image: url("/assets/images/dungeon-stat-speed.svg");
+  }
+}
+

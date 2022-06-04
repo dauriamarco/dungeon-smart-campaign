@@ -1,0 +1,19 @@
+<div class="stat__frame" [ngClass]="frameClass">
+  <input
+    type="number"
+    placeholder="0"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    maxlength="1"
+    [readonly]="readonly"
+    [ngClass]="{'jiggle': !readonly}">
+
+  <div class="stat__name ellipsis">{{stat.name | uppercase}}</div>
+
+  <input
+    *ngIf="stat.type === 'stat'"
+    type="number"
+    placeholder="0"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    maxlength="2"
+    [readonly]="readonly">
+</div>
