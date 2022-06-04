@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'dsc-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss'],
+  styleUrls: ['./nav.component.less'],
 })
 export class NavComponent implements OnInit {
   isDarkMode: boolean;
@@ -11,7 +11,9 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
 
   toggleFlyOutMenu() {
     this.flyOutMenuOpen = !this.flyOutMenuOpen;
@@ -19,7 +21,8 @@ export class NavComponent implements OnInit {
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.add(this.isDarkMode ? 'dark-mode' : 'light-mode');
+    document.body.classList.remove(this.isDarkMode ? 'light-mode' : 'dark-mode');
   }
 
 }

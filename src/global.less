@@ -29,7 +29,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');
 
-
 * {
   scrollbar-width: none;
 }
@@ -104,6 +103,21 @@ input[type=number] {
   max-width: 1440px;
   margin: 0 auto;
   overflow: auto;
+
+  section {
+    &.dashboard__left {
+      grid-column: 1 / 5;
+      section {
+        margin-bottom: 2rem;
+      }
+    }
+    &.dashboard__right {
+      grid-column: 5 / 8;
+      section {
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
 
 .container {
@@ -118,51 +132,27 @@ input[type=number] {
     justify-content: space-between;
   }
   .container-content {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   .container-footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 @media screen and(max-width: 1024px) {
   .page-content {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 2rem;
-    padding: 150px 2rem;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow: auto;
-  }
+    padding: 150px 1.5rem;
 
-  .container {
-    color: var(--ion-color-dark);
-    padding: 1rem;
-    background-color: var(--ion-color-light-tint);
-    border-radius: 12px;
-    height: fit-content;
-    overflow: auto;
-    .container-header {
-      display: flex;
-      justify-content: space-between;
-    }
-    .container-content {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 2rem;
-    }
-    .container-footer {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 2rem;
-      margin-top: 1rem;
+    section {
+      &.dashboard__left {
+        grid-column: 1 / 8;
+      }
+      &.dashboard__right {
+        grid-column: 1 / 8;
+      }
     }
   }
 }
@@ -324,7 +314,7 @@ ion-modal {
     border-radius: 12px;
   }
   &:hover {
-    background-color: rgba($color: var(--sm-tag-background), $alpha: 0.75);
+    background-color: rgba(var(--sm-tag-background), 0.75);
   }
 }
 
@@ -372,7 +362,7 @@ ion-modal {
 }
 
 .bg-blur {
-  background-color: rgba($color: var(--ion-color-white-contrast-rgb), $alpha: 0.75) !important;
+  background-color: rgba(var(--ion-color-white-contrast-rgb), 0.75) !important;
   backdrop-filter: blur(20px);
 }
 

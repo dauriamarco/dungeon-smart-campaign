@@ -11,7 +11,7 @@ export interface SavingThrows {
 @Component({
   selector: 'dsc-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  styleUrls: ['home.page.less'],
 })
 export class HomePage {
   public savingThrows: SavingThrows[] = [

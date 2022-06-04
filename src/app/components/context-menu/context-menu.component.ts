@@ -4,7 +4,7 @@ import { PopoverController } from '@ionic/angular';
 @Component({
   selector: 'dsc-context-menu',
   templateUrl: './context-menu.component.html',
-  styleUrls: ['./context-menu.component.scss'],
+  styleUrls: ['./context-menu.component.less'],
 })
 export class ContextMenuComponent implements OnInit {
 
