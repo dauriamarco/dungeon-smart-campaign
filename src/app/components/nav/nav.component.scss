@@ -26,11 +26,14 @@
         }
       }
       &.nav-logo {
+        width: 155px;
+        height: 100px;
         padding: 1rem;
-        img {
-          width: 125px;
-          height: auto;
-        }
+        background-image: var(--sm-logo-background);
+        background-clip: content-box;
+        background-size: 125px;
+        background-position: center;
+        background-repeat: no-repeat;
       }
     }
   }

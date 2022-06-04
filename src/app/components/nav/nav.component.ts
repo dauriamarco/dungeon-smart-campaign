@@ -11,9 +11,7 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+  ngOnInit() {}
 
   toggleFlyOutMenu() {
     this.flyOutMenuOpen = !this.flyOutMenuOpen;
