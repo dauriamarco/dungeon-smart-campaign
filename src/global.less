@@ -98,7 +98,7 @@ input[type=number] {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 2rem;
-  padding: 150px 2rem;
+  padding: 150px 2rem 2rem 2rem;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -107,13 +107,13 @@ input[type=number] {
   section {
     &.dashboard__left {
       grid-column: 1 / 5;
-      section {
+      section:not(:last-child) {
         margin-bottom: 2rem;
       }
     }
     &.dashboard__right {
       grid-column: 5 / 8;
-      section {
+      section:not(:last-child) {
         margin-bottom: 2rem;
       }
     }
