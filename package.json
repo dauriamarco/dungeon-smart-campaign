@@ -1,8 +1,8 @@
 {
-  "name": "ionic-app-base",
+  "name": "dungeon-smart-campaign",
   "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Marco D'Auria",
+  "homepage": "https://www.marcodauria.it/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
