@@ -107,15 +107,24 @@
         ion-item {
           width: 100%;
           border-radius: 8px 0 0 8px;
+          --border-radius: 8px 0 0 8px;
+          --min-height: 54px;
+          --padding-start: 0.75rem;
+
+          &.ios {
+            --border-radius: 50px 0 0 50px;
+          }
 
           & + input[type="number"] {
             cursor: pointer;
             text-align: center;
             background: none;
-            padding: 1rem 0;
-            border: 2.75px solid var(--ion-color-white-contrast);
+            padding: 0;
+            border: 2px solid var(--ion-color-white-contrast);
+            border-left: none;
             outline: none;
             width: 40px;
+            height: 54px;
             border-radius: 0 8px 8px 0;
 
             &:focus {
