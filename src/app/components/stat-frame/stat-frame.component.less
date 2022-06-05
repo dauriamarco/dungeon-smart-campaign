@@ -2,12 +2,11 @@
   position: relative;
   width: 129px;
   height: 150px;
-  background-image: url("/assets/images/dungeon-stat-frame.svg");
+  background-image: var(--sm-frame-background);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
-  filter: drop-shadow(0 0 0.75rem rgba(var(--ion-color-dark-fixed-rgb), 0.25));
 
   input[type="number"] {
     cursor: pointer;
@@ -22,7 +21,7 @@
     left: 0;
     top: 80px;
     width: 100%;
-    color: #121212;
+    color: var(--ion-color-light);
     font-weight: 900;
     padding: 0 0.75rem;
   }
@@ -33,7 +32,7 @@
       left: 0;
       top: 12px;
       width: 100%;
-      color: var(--ion-color-light-fixed);
+      color: var(--ion-color-dark);
       height: 75px;
       font-size: 3rem;
       font-weight: 900;
@@ -51,7 +50,7 @@
       transform: translateX(-50%);
       bottom: 1.5px;
       height: 30px;
-      color: var(--ion-color-dark-fixed);
+      color: var(--ion-color-light);
       font-weight: 900;
       width: 30px;
       padding: 0;
@@ -65,10 +64,10 @@
     }
   }
   &.armor {
-    background-image: url("/assets/images/dungeon-stat-armor.svg");
+    background-image: var(--sm-frame-background-armor);
   }
   &.speed {
-    background-image: url("/assets/images/dungeon-stat-speed.svg");
+    background-image: var(--sm-frame-background-speed);
   }
 }
 

@@ -30,7 +30,7 @@
 @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');
 
 * {
-  scrollbar-width: none;
+  scrollbar-width: 0;
 }
 
 body {
@@ -55,7 +55,7 @@ h6 {
 }
 
 a {
-  color: var(--ion-text-color);
+  color: var(--ion-dark-color);
   text-decoration: none;
   transition: var( --dsc-transition);
 }
@@ -144,7 +144,7 @@ input[type=number] {
 
 @media screen and(max-width: 1024px) {
   .page-content {
-    padding: 150px 1.5rem;
+    padding: 110px 1.5rem 150px 1.5rem;
 
     section {
       &.dashboard__left {
@@ -195,6 +195,8 @@ ion-popover {
 }
 
 ion-modal {
+  --max-width: 90vw;
+  --max-height: 75vh;
   .modal__header {
     display: flex;
     justify-content: space-between;
@@ -266,7 +268,7 @@ ion-modal {
   transition: var( --dsc-transition);
   background-color: var(--accent-color);
   padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 25px;
   font-size: 1rem;
   --accent-color: var(--ion-color-primary);
   --back-color: var(--ion-color-white-contrast);
