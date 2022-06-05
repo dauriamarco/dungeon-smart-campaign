@@ -55,6 +55,15 @@
   top: -1rem;
   margin-bottom: -2rem;
 
+  @supports (-webkit-touch-callout: none) {
+    margin-bottom: -1rem;
+    &::-webkit-scrollbar {
+      display: none !important;
+      height: 0;
+    }
+    scrollbar-width: 0;
+  }
+
   .note {
     opacity: 1;
     cursor: pointer;

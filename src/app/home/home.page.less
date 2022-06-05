@@ -1,0 +1,130 @@
+// @import (reference) "../../global.less";
+@mobile:   ~"only screen and (max-width: 425px)";
+@tablet:   ~"only screen and (min-width: 425px) and (max-width: 1023px)";
+@desktop:  ~"only screen and (min-width: 1024px)";
+
+.dashboard {
+  
+  .dashboard__right {
+    @media @tablet, @desktop {
+      height: calc(100vh - 150px - 2rem);
+      overflow: auto;
+      border-radius: 12px;
+      position: sticky;
+      top: 0px;
+    }
+  }
+
+  .dashboard__character {
+    .container {
+      color: var(--ion-color-light-fixed);
+      overflow: visible;
+      
+      .dashboard__avatar {  
+        width: calc(40% - 0.5rem);
+        min-height: 250px;
+        margin-top: -2rem;
+        background-image: url('/assets/images/fylson-nornelis-avatar.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @media @mobile {
+          width: 100%;
+        }
+      }
+
+      .dashboard__character-box {
+        width: calc(60% - 0.5rem);
+        
+        @media @mobile {
+          width: 100%;
+        }
+      }
+      
+    }
+
+  }
+
+  .dashboard__statistics {
+    .container-content {
+      justify-content: center;
+      dsc-stat-frame {
+        width: calc(33% - 1rem);
+        min-width: 129px;
+        display: flex;
+        justify-content: center;
+      }
+      @media @mobile {
+        gap: 2rem;
+      }
+    }
+  }
+
+  .dashboard__additional {
+    .container-content {
+      justify-content: center;
+      dsc-stat-frame {
+        width: calc(33% - 1rem);
+        min-width: 129px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .dashboard__notes {
+    .container-content {
+      dsc-quick-notes {    
+        width: 100%;
+      }
+    }
+  }
+
+  .dashboard__features {
+    .container-content {
+      dsc-note-input {    
+        width: 100%;
+      }
+    }
+  }
+
+  .dashboard__throws, .dashboard__skills {
+    .container-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      .dashboard__checkbox {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 0.5rem);
+        box-shadow: 0px 8px 50px -25px var(--ion-color-dark-fixed);
+
+        @media @mobile {
+          width: 100%;
+        }
+
+        ion-item {
+          width: 100%;
+          border-radius: 8px 0 0 8px;
+
+          & + input[type="number"] {
+            cursor: pointer;
+            text-align: center;
+            background: none;
+            padding: 1rem 0;
+            border: 2.75px solid var(--ion-color-white-contrast);
+            outline: none;
+            width: 40px;
+            border-radius: 0 8px 8px 0;
+
+            &:focus {
+              box-shadow: inset 0 0 0 1px var(--accent-color);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

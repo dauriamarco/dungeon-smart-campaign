@@ -1,7 +1,7 @@
 <div class="quick-note-wrapper">
   <form autocomplete="off">
     <input id="quick-note-title" type="text" name="quickNoteTitle" placeholder="Title" [readonly]="readonly">
-    <textarea id="quickNote" name="quickNote" rows="6" maxlength="550" spellcheck="false" placeholder="Scrivi quel cazzo che ti pare giovane bardo" [readonly]="readonly"></textarea>
+    <textarea id="quickNote" name="quickNote" rows="8" spellcheck="false" placeholder="Your note here" [readonly]="readonly"></textarea>
     <button type="submit" class="button button-round" (click)="toggleEditMode()">
       <ion-icon [name]="readonly ? 'lock-closed-outline' : 'lock-open-outline'"></ion-icon>
     </button>

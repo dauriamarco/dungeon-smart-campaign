@@ -1,22 +1,23 @@
 <div class="dashboard page-content">
-  <div class="dashboard-left">
-    <div class="container">
-      <div class="container-header">
-        <h3>
-          Character
-        </h3>
-        <ion-icon name="person-circle"></ion-icon>
-      </div>
-      <div class="container-content">
-        <div class="dashboard__avatar"></div>
-        <div class="dashboard__character-box">
-          <dsc-character-box></dsc-character-box>
+
+  <section class="dashboard__left">
+    <!-- CHARACTER BOX -->
+  
+    <section class="dashboard__character">
+      <div class="container" >
+        <div class="container-content">
+          <div class="dashboard__avatar"></div>
+          <div class="dashboard__character-box">
+            <dsc-character-box></dsc-character-box>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="dashboard-notes">
+    </section>
+  
+    <!-- NOTES -->
+  
+    <section class="dashboard__notes">
+      <div class="container" >
         <div class="container-header">
           <h3>
             Notes
@@ -27,48 +28,60 @@
           <dsc-quick-notes [notes]="notes" (quickNoteSubmitted)="onQuickNoteSubmit($event)"></dsc-quick-notes>
         </div>
       </div>
-    </div>
+    </section>
+  
+    <!-- FEATURES -->
+  
+    <section class="dashboard__features">
+      <div class="container">
+        <div class="container-header">
+          <h3>
+            Features and Traits
+          </h3>
+          <ion-icon name="reader-outline"></ion-icon>
+        </div>
+        <div class="container-content">
+          <dsc-note-input></dsc-note-input>
+        </div>
+      </div>
+    </section>
+  </section>
 
-    <div class="dashboard-features container">
-      <div class="container-header">
-        <h3>
-          Features and Traits
-        </h3>
-        <ion-icon name="reader-outline"></ion-icon>
+  <section class="dashboard__right">
+    <!-- STATISTICS -->
+  
+    <section class="dashboard__statistics">
+      <div class="container" >
+        <div class="container-header">
+          <h3>
+            Abilities & Statistics
+          </h3>
+          <ion-icon [name]="statsLocked ? 'lock-closed' : 'lock-open-outline'" (click)="toggleStatsLocked()"></ion-icon>
+        </div>
+        <div class="container-content">
+          <ng-container *ngFor="let stat of stats">
+            <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
+          </ng-container>
+        </div>
       </div>
-      <div class="container-content">
-        <dsc-note-input></dsc-note-input>
-      </div>
-    </div>
-  </div>
-
-  <div class="dashboard-right">
-    <div class="container">
-      <div class="container-header">
-        <h3>
-          Abilities & Statistics
-        </h3>
-        <ion-icon [name]="statsLocked ? 'lock-closed' : 'lock-open-outline'" (click)="toggleStatsLocked()"></ion-icon>
-      </div>
-      <div class="container-content">
-        <ng-container *ngFor="let stat of stats">
-          <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
-        </ng-container>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="dashboard-additional">
+    </section>
+  
+    <!-- ADDITIONAL -->
+  
+    <section class="dashboard__additional">
+      <div class="container" >
         <div class="container-content">
           <ng-container *ngFor="let stat of additionalStats">
             <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
           </ng-container>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="dashboard-saving-throws">
+    </section>
+  
+    <!-- SAVING THROWS -->
+  
+    <section class="dashboard__throws">
+      <div class="container" >
         <div class="container-header">
           <h3>
             Saving Throws
@@ -91,10 +104,12 @@
           </ng-container>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="dashboard-saving-throws">
+    </section>
+  
+    <!-- SKILLS -->
+  
+    <section class="dashboard__skills">
+      <div class="container" >
         <div class="container-header">
           <h3>
             Skills
@@ -117,6 +132,7 @@
           </ng-container>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </section>
 </div>
+

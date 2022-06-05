@@ -5,7 +5,7 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'dsc-character-box',
   templateUrl: './character-box.component.html',
-  styleUrls: ['./character-box.component.scss'],
+  styleUrls: ['./character-box.component.less'],
 })
 export class CharacterBoxComponent implements OnInit {
 

@@ -7,7 +7,7 @@ import { ContextMenuComponent } from '../context-menu/context-menu.component';
 @Component({
   selector: 'dsc-quick-notes',
   templateUrl: './quick-notes.component.html',
-  styleUrls: ['./quick-notes.component.scss'],
+  styleUrls: ['./quick-notes.component.less'],
 })
 export class QuickNotesComponent implements OnInit, AfterViewInit {
 

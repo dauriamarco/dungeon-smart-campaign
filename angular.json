@@ -31,7 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": ["src/theme/variables.less", "src/global.less"],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,
@@ -151,10 +151,10 @@
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
+      "styleext": "less"
     },
     "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
+      "styleext": "less"
     }
   }
 }
