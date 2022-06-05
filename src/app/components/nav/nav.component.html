@@ -41,11 +41,11 @@
           </li>
         </ul>
         <div class="actions__container">
-          <div class="dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
+          <div class="action__button dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
             <ion-icon [name]="isDarkMode ? 'sunny-outline' : 'moon-outline'"></ion-icon> <span>{{isDarkMode ? 'Light Mode' : 'Dark Mode'}}</span>
           </div>
-          <div class="dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
-            <ion-icon name="logo-youtube"></ion-icon> <span>D&D Playlist</span>
+          <div class="action__button">
+            <ion-icon name="play-outline"></ion-icon> <span>D&D Playlist</span>
           </div>
         </div>
       </nav>
@@ -91,11 +91,11 @@
       </li>
     </ul>
     <div class="actions__container">
-      <div class="dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
+      <div class="action__button dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
         <ion-icon [name]="isDarkMode ? 'sunny-outline' : 'moon-outline'"></ion-icon> <span>{{isDarkMode ? 'Light Mode' : 'Dark Mode'}}</span>
       </div>
-      <div class="dark-mode-toggle" [ngClass]="{'is-dark': isDarkMode}" (click)="toggleDarkMode()">
-        <ion-icon name="logo-youtube"></ion-icon> <span>D&D Playlist</span>
+      <div class="action__button">
+        <ion-icon name="play-outline"></ion-icon> <span>D&D Playlist</span>
       </div>
     </div>
   </nav>
