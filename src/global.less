@@ -31,9 +31,13 @@
 
 * {
   scrollbar-width: 0;
+  ::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
 }
 
 body {
+  // todo: set variable for cursor
   cursor: url(assets/icon/magic-cursor.svg), auto;
   &.dark-mode {
     cursor: url(assets/icon/magic-cursor-dark.svg), auto;
@@ -102,7 +106,8 @@ input[type=number] {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   section {
     &.dashboard__left {
