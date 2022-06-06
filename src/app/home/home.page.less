@@ -98,7 +98,9 @@
         display: flex;
         align-items: center;
         width: calc(50% - 0.5rem);
-        box-shadow: 0px 8px 50px -25px var(--ion-color-dark-fixed);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 1px 1px var(--ion-color-light-shade);
 
         @media @mobile {
           width: 100%;
@@ -111,16 +113,11 @@
           --min-height: 54px;
           --padding-start: 0.75rem;
 
-          &.ios {
-            --border-radius: 50px 0 0 50px;
-          }
-
           & + input[type="number"] {
             cursor: pointer;
             text-align: center;
             background: none;
-            padding: 0;
-            border: 2px solid var(--ion-color-white-contrast);
+            padding: 1px;
             border-left: none;
             outline: none;
             width: 40px;
