@@ -30,7 +30,7 @@
 @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');
 
 * {
-  scrollbar-width: 0;
+  scrollbar-width: 0; // Firefox
   ::-webkit-scrollbar {
     display: none; // Safari and Chrome
   }
@@ -191,7 +191,6 @@ ion-checkbox {
 ion-popover {
   --width: fit-content;
   --background: none;
-  --ion-backdrop-color: none;
   --box-shadow: 0px 8px 50px 0 rgba(var(--ion-color-dark-fixed-rgb), 0.25);
 
   &::part(content) {

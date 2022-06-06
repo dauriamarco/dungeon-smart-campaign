@@ -9,14 +9,14 @@
 </div>
 <div #noteList class="notes-group" (click)="deselectNotes()">
   <ng-container *ngFor="let note of notes; index as i">
-    <div [id]="'note-' + i" class="note" (click)="toggleSelected(note, $event)" [ngClass]="{'selected': note.selected, 'disappear': note.deleting}">
+    <div [id]="'note-' + i" class="note" (click)="toggleSelected(note, $event)" (contextmenu)="toggleSelected(note, $event)" [ngClass]="{'selected': note.selected, 'disappear': note.deleting}">
     <div class="note__title ellipsis">{{note.title}}</div>
     <div class="note__content">{{note.content}}</div>
     <div class="note__edit__btn">
       <button type="submit" class="button button-round" (click)="openContextMenu($event)">
         <ion-icon name="ellipsis-vertical"></ion-icon>
       </button>
-      <ion-popover [trigger]="'note-' + i" triggerAction="context-menu" reference="event" [dismissOnSelect]="true">
+      <ion-popover [trigger]="'note-' + i" triggerAction="context-menu" reference="event" [dismissOnSelect]="true" [showBackdrop]="false">
         <ng-template>
           <div class="context-menu">
             <ul>
