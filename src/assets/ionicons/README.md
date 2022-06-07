@@ -1,4 +1,4 @@
-#Custom Ion Icons
+# Custom Ion Icons
 
 In the present folder it is possible to add custom SVG files to use via "*<ion-icon>*".
 
