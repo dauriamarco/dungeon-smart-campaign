@@ -1,4 +1,5 @@
 @mobile:   ~"only screen and (max-width: 425px)";
+@tablet:   ~"only screen and (min-width: 425px) and (max-width: 1023px)";
 
 :host {
   z-index: 999;
@@ -167,7 +168,7 @@
   display: none;
 }
 
-@media @mobile {
+@media @mobile, @tablet {
   .top-bar-mobile {
     display: flex;
     align-items: center;
@@ -311,7 +312,7 @@
     padding: 0 0.75rem;
     color: var(--ion-color-light-fixed);
     filter: drop-shadow(0 0 0.75rem rgba(var(--ion-color-primary-rgb), 0.5));
-    transition: transform 250ms ease-out;
+    transition: all 250ms ease-out;
   
     ul {
       display: grid;
@@ -321,11 +322,12 @@
       height: 100%;
       
       li {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-bottom: 1rem;
         a {
           color: var(--ion-color-light-fixed);
         }
-        font-size: 0.7rem;
-        text-align: center;
         ion-icon {
           width: 100%;
           font-size: 1.75rem;
@@ -347,6 +349,8 @@
     }
 
     &.hide-nav {
+      opacity: 0;
+      pointer-events: none;
       transform: translateX(-425px) !important;
       + #mobile-nav-handle {
         opacity: 1;
@@ -374,4 +378,32 @@
   padding: 1.5rem 0.5rem;
   box-shadow: 0px 0px 50px -10px var(--ion-color-dark-fixed);
   transition: var(--dsc-transition);
+}
+
+@supports not (-webkit-touch-callout: none) {
+  .nav__container-mobile {
+    li {
+      margin-bottom: 0 !important;
+    }
+    &::after {
+      content: '';
+      width: 200px;
+      height: 15px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.5px;
+      margin: 0 auto;
+      background-color: var(--ion-color-primary);
+    }
+  }
+}
+
+@media @tablet {
+  .nav__container-mobile {
+    max-width: 100%;
+    bottom: 0;
+    border-radius: 18px 18px 0 0;
+    background-color: var(--ion-color-primary);
+  }
 }

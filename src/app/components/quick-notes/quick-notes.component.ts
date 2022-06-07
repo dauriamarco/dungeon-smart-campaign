@@ -63,10 +63,10 @@ export class QuickNotesComponent implements OnInit, AfterViewInit {
 
 
   toggleSelected(noteToSelect, event) {
-    if (!event.shiftKey) {
+    if (!event.shiftKey && !noteToSelect.selected) {
       this.deselectNotes();
     }
-    noteToSelect.selected = !noteToSelect.selected;
+    noteToSelect.selected = event.type === 'contextmenu' ? true : !noteToSelect.selected;
   }
 
   deselectNotes() {

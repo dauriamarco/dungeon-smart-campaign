@@ -23,6 +23,7 @@ export class NavComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.gesture = this.gestureCtrl.create({
       el: this.mobNavbar.nativeElement,
+      disableScroll: true,
       threshold: 15,
       direction: 'x',
       gestureName: 'hide-nav-gesture',
