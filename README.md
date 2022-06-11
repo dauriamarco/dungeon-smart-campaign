@@ -1,2 +1,3 @@
-# dungeon-smart-campaign
-You know your worth
+# Dungeon Smart Campaign
+
+> You know your worth
