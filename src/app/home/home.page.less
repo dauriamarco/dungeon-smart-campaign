@@ -4,46 +4,58 @@
 @desktop:  ~"only screen and (min-width: 1024px)";
 
 .dashboard {
+  .dashboard__left {    
+    grid-column: 1 / 5;
+    section:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    @media @mobile {
+      grid-column: 1 / 8;
+    }
+  }
   
   .dashboard__right {
+    grid-column: 5 / 8;
+    section:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    @media @mobile {
+      grid-column: 1 / 8;
+    }
     @media @tablet, @desktop {
       height: calc(100vh - 150px - 2rem);
       overflow: auto;
-      border-radius: 12px;
+      border-radius: 1rem;
       position: sticky;
       top: 0px;
     }
   }
 
   .dashboard__character {
-    .container {
-      color: var(--ion-color-light-fixed);
-      overflow: visible;
-      
-      .dashboard__avatar {  
-        width: calc(40% - 0.5rem);
-        min-height: 250px;
-        margin-top: -2rem;
-        background-image: url('/assets/images/fylson-nornelis-avatar.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+    color: var(--ion-color-light-fixed);
+    overflow: visible;
+    
+    .dashboard__avatar {  
+      width: calc(40% - 0.5rem);
+      min-height: 250px;
+      margin-top: -2rem;
+      background-image: url('/assets/images/fylson-nornelis-avatar.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
 
-        @media @mobile {
-          width: 100%;
-        }
+      @media @mobile {
+        width: 100%;
       }
-
-      .dashboard__character-box {
-        width: calc(60% - 0.5rem);
-        
-        @media @mobile {
-          width: 100%;
-        }
-      }
-      
     }
 
+    .dashboard__character-box {
+      width: calc(60% - 0.5rem);
+      
+      @media @mobile {
+        width: 100%;
+      }
+    }
   }
 
   .dashboard__statistics {
@@ -69,6 +81,33 @@
         min-width: 129px;
         display: flex;
         justify-content: center;
+      }
+      @media @mobile {
+        gap: 2rem;
+      }
+    }
+  }
+
+  .dashboard__bonus {
+    .container-content {
+      justify-content: space-between;
+      align-items: center;
+      .dashboard__bonus__wrapper {
+        display: flex;
+        align-items: center;
+        max-width: 85%;
+        
+        input[type="number"] {
+          width: 3rem;
+          text-align: center;  
+          margin-right: 1rem;
+          border-radius: 8px;
+          background-color: var(--ion-color-light-shade);
+        }
+
+        .dashboard__bonus__name {
+          padding-right: 0.25rem;
+        }
       }
     }
   }

@@ -3,46 +3,40 @@
   <section class="dashboard__left">
     <!-- CHARACTER BOX -->
   
-    <section class="dashboard__character">
-      <div class="container" >
-        <div class="container-content">
-          <div class="dashboard__avatar"></div>
-          <div class="dashboard__character-box">
-            <dsc-character-box></dsc-character-box>
-          </div>
+    <section class="container dashboard__character">
+      <div class="container-content">
+        <div class="dashboard__avatar"></div>
+        <div class="dashboard__character-box">
+          <dsc-character-box></dsc-character-box>
         </div>
       </div>
     </section>
   
     <!-- NOTES -->
   
-    <section class="dashboard__notes">
-      <div class="container" >
-        <div class="container-header">
-          <h3>
-            Notes
-          </h3>
-          <ion-icon name="reader-outline"></ion-icon>
-        </div>
-        <div class="container-content">
-          <dsc-quick-notes [notes]="notes" (quickNoteSubmitted)="onQuickNoteSubmit($event)"></dsc-quick-notes>
-        </div>
+    <section class="container dashboard__notes">
+      <div class="container-header">
+        <h3>
+          Notes
+        </h3>
+        <ion-icon name="reader-outline"></ion-icon>
+      </div>
+      <div class="container-content">
+        <dsc-quick-notes [notes]="notes" (quickNoteSubmitted)="onQuickNoteSubmit($event)"></dsc-quick-notes>
       </div>
     </section>
   
     <!-- FEATURES -->
   
-    <section class="dashboard__features">
-      <div class="container">
-        <div class="container-header">
-          <h3>
-            Features and Traits
-          </h3>
-          <ion-icon name="reader-outline"></ion-icon>
-        </div>
-        <div class="container-content">
-          <dsc-note-input></dsc-note-input>
-        </div>
+    <section class="container dashboard__features">
+      <div class="container-header">
+        <h3>
+          Features and Traits
+        </h3>
+        <ion-icon name="reader-outline"></ion-icon>
+      </div>
+      <div class="container-content">
+        <dsc-note-input></dsc-note-input>
       </div>
     </section>
   </section>
@@ -50,87 +44,98 @@
   <section class="dashboard__right">
     <!-- STATISTICS -->
   
-    <section class="dashboard__statistics">
-      <div class="container" >
-        <div class="container-header">
-          <h3>
-            Abilities & Statistics
-          </h3>
-          <ion-icon [name]="statsLocked ? 'lock-closed' : 'lock-open-outline'" (click)="toggleStatsLocked()"></ion-icon>
-        </div>
-        <div class="container-content">
-          <ng-container *ngFor="let stat of stats">
-            <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
-          </ng-container>
-        </div>
+    <section class="container dashboard__statistics">
+      <div class="container-header">
+        <h3>
+          Abilities & Statistics
+        </h3>
+        <ion-icon [name]="statsLocked ? 'lock-closed' : 'lock-open-outline'" (click)="toggleStatsLocked()"></ion-icon>
+      </div>
+      <div class="container-content">
+        <ng-container *ngFor="let stat of stats">
+          <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
+        </ng-container>
       </div>
     </section>
   
     <!-- ADDITIONAL -->
   
-    <section class="dashboard__additional">
-      <div class="container" >
-        <div class="container-content">
-          <ng-container *ngFor="let stat of additionalStats">
-            <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
-          </ng-container>
+    <section class="container dashboard__additional">
+      <div class="container-content">
+        <ng-container *ngFor="let stat of additionalStats">
+          <dsc-stat-frame [stat]="stat" [readonly]="statsLocked" [frameClass]="stat.type"></dsc-stat-frame>
+        </ng-container>
+      </div>
+    </section>
+
+    <!-- BONUS -->
+  
+    <section class="container dashboard__bonus">
+      <div class="container-content">
+        <div class="dashboard__bonus__wrapper">
+          <input
+            type="number"
+            placeholder="0"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="1"
+            [readonly]="statsLocked"
+            [ngClass]="{'jiggle': !statsLocked}">
+
+          <h6 class="dashboard__bonus__name ellipsis no-margin">PASSIVE WISDOM</h6><span>(Perception)</span>
         </div>
+        <ion-icon name="alert-circle-outline"></ion-icon>
       </div>
     </section>
   
     <!-- SAVING THROWS -->
   
-    <section class="dashboard__throws">
-      <div class="container" >
-        <div class="container-header">
-          <h3>
-            Saving Throws
-          </h3>
-          <ion-icon name="dice-outline"></ion-icon>
-        </div>
-        <div class="container-content">
-          <ng-container *ngFor="let item of savingThrows; index as i">
-            <div class="dashboard__checkbox">
-              <ion-item>
-                <ion-checkbox [checked]="item.checked" color="dark"></ion-checkbox>
-                <ion-label>{{item.name}}</ion-label>
-              </ion-item>
-              <input
-                  type="number"
-                  placeholder="0"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  maxlength="1">
-            </div>
-          </ng-container>
-        </div>
+    <section class="container dashboard__throws">
+      <div class="container-header">
+        <h3>
+          Saving Throws
+        </h3>
+        <ion-icon name="dice-outline"></ion-icon>
+      </div>
+      <div class="container-content">
+        <ng-container *ngFor="let item of savingThrows; index as i">
+          <div class="dashboard__checkbox">
+            <ion-item>
+              <ion-checkbox [checked]="item.checked" color="dark"></ion-checkbox>
+              <ion-label>{{item.name}}</ion-label>
+            </ion-item>
+            <input
+                type="number"
+                placeholder="0"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="1">
+          </div>
+        </ng-container>
       </div>
     </section>
   
     <!-- SKILLS -->
   
-    <section class="dashboard__skills">
-      <div class="container" >
-        <div class="container-header">
-          <h3>
-            Skills
-          </h3>
-          <ion-icon name="library"></ion-icon>
-        </div>
-        <div class="container-content">
-          <ng-container *ngFor="let item of skills">
-            <div class="dashboard__checkbox">
-              <ion-item>
-                <ion-checkbox [checked]="item.checked"></ion-checkbox>
-                <ion-label>{{item.name}}</ion-label>
-              </ion-item>
-              <input
-                  type="number"
-                  placeholder="0"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  maxlength="1">
-            </div>
-          </ng-container>
-        </div>
+    <section class="container dashboard__skills">
+      <div class="container-header">
+        <h3>
+          Skills
+        </h3>
+        <ion-icon name="library"></ion-icon>
+      </div>
+      <div class="container-content">
+        <ng-container *ngFor="let item of skills">
+          <div class="dashboard__checkbox">
+            <ion-item>
+              <ion-checkbox [checked]="item.checked"></ion-checkbox>
+              <ion-label>{{item.name}}</ion-label>
+            </ion-item>
+            <input
+                type="number"
+                placeholder="0"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="1">
+          </div>
+        </ng-container>
       </div>
     </section>
   </section>
