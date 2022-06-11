@@ -17,7 +17,7 @@ export class NavComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private gestureCtrl: GestureController) { }
 
   ngOnInit() {
-    this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    this.initializeDarkMode();
   }
 
   ngAfterViewInit(): void {
@@ -47,6 +47,7 @@ export class NavComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isDarkMode = !this.isDarkMode;
     document.body.classList.add(this.isDarkMode ? 'dark-mode' : 'light-mode');
     document.body.classList.remove(this.isDarkMode ? 'light-mode' : 'dark-mode');
+    localStorage.setItem('isDarkMode', '' + this.isDarkMode);
   }
 
   onMoveHandler(detail) {
@@ -68,6 +69,15 @@ export class NavComponent implements OnInit, AfterViewInit, OnDestroy {
   toggleMobileNavBar() {
     this.mobNavbar.nativeElement.classList.toggle('hide-nav');
     this.mobNavbar.nativeElement.style.transform = `translateX(0px)`
+  }
+
+  private initializeDarkMode() {
+    const darkModeString = localStorage.getItem('isDarkMode');
+    if(!darkModeString) {
+      this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } else {
+      this.isDarkMode = darkModeString === 'true';
+    }
   }
 
 }

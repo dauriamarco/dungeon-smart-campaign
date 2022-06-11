@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.less'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+    document.body.classList.add(isDarkMode ? 'dark-mode' : 'light-mode');
+    document.body.classList.remove(isDarkMode ? 'light-mode' : 'dark-mode');
+  }
 }

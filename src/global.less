@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -26,8 +26,8 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap");
 
 @mobile:   ~"only screen and (max-width: 425px)";
 @tablet:   ~"only screen and (min-width: 425px) and (max-width: 1023px)";
@@ -65,7 +65,7 @@ h6 {
 a {
   color: var(--ion-dark-color);
   text-decoration: none;
-  transition: var( --dsc-transition);
+  transition: var(--dsc-transition);
 }
 
 ul {
@@ -81,12 +81,15 @@ textarea {
   outline: none;
   padding: 1rem;
   caret-color: var(--accent-color);
-  transition: var( --dsc-transition);
+  transition: var(--dsc-transition);
   --accent-color: var(--ion-color-primary);
   &:focus {
-    -webkit-box-shadow: inset 0 0 0 1px var(--accent-color), 0 0 0 0.5rem var(--ion-color-light-tint);
-    -moz-box-shadow: inset 0 0 0 1px var(--accent-color), 0 0 0 0.5rem var(--ion-color-light-tint);
-    box-shadow: inset 0 0 0 1px var(--accent-color), 0 0 0 0.5rem var(--ion-color-light-tint);
+    -webkit-box-shadow: inset 0 0 0 1px var(--accent-color),
+      0 0 0 0.5rem var(--ion-color-light-tint);
+    -moz-box-shadow: inset 0 0 0 1px var(--accent-color),
+      0 0 0 0.5rem var(--ion-color-light-tint);
+    box-shadow: inset 0 0 0 1px var(--accent-color),
+      0 0 0 0.5rem var(--ion-color-light-tint);
   }
 }
 
@@ -96,7 +99,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -149,7 +152,7 @@ ion-button {
 
 ion-icon {
   cursor: pointer;
-  transition: var( --dsc-transition);
+  transition: var(--dsc-transition);
   font-size: 22px;
   min-width: 22px;
   &:hover {
@@ -249,7 +252,7 @@ ion-modal {
   justify-content: center;
   align-items: center;
   outline: none;
-  transition: var( --dsc-transition);
+  transition: var(--dsc-transition);
   background-color: var(--accent-color);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -273,7 +276,8 @@ ion-modal {
     transform: scale(1.015);
   }
   &:focus {
-    -webkit-box-shadow: 0 0 0 4px var(--back-color), 0 0 0 5px var(--accent-color);
+    -webkit-box-shadow: 0 0 0 4px var(--back-color),
+      0 0 0 5px var(--accent-color);
     -moz-box-shadow: 0 0 0 4px var(--back-color), 0 0 0 5px var(--accent-color);
     box-shadow: 0 0 0 4px var(--back-color), 0 0 0 5px var(--accent-color);
   }
@@ -290,7 +294,7 @@ ion-modal {
   white-space: nowrap;
   background-color: rgb(var(--dsc-tag-background));
   user-select: none;
-  transition: var( --dsc-transition);
+  transition: var(--dsc-transition);
   --dsc-tag-background: transparent;
   &:not(:last-child) {
     margin-right: 0.5rem;
@@ -382,7 +386,6 @@ ion-modal {
   margin: 0 !important;
 }
 
-
 /** Animations **/
 
 .jiggle {
@@ -397,8 +400,8 @@ ion-modal {
     animation-timing-function: ease-in;
   }
   50% {
-      transform: rotate(-1.5deg);
-      animation-timing-function: ease-out;
+    transform: rotate(-1.5deg);
+    animation-timing-function: ease-out;
   }
 }
 
