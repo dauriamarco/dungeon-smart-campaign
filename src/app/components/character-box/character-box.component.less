@@ -1,6 +1,8 @@
 .character-box {
   color: var(--ion-color-light-fixed);
   background-color: var(--ion-color-dark-fixed-shade);
+  border-radius: 0.5rem;
+  box-shadow: none;
   overflow: hidden;
 
   & > .tag {
@@ -11,6 +13,11 @@
     display: flex;
     overflow: auto;
     margin-bottom: 0.5rem;
+  }
+
+  .dsc-card__header {
+    background-color: transparent;
+    padding: 0;
   }
 
   .dsc-card__content {

@@ -103,20 +103,20 @@
 
 <nav #mobileNavBar class="nav__container-mobile">
   <ul>
-    <li>
-      <a href="javascript:void(0)"><ion-icon name="apps-outline"></ion-icon>SHEET</a>
+    <li class="active">
+      <a href="javascript:void(0)"><ion-icon name="apps-outline"></ion-icon><span class="nav__label">SHEET</span></a>
     </li>
     <li>
-      <a href="javascript:void(0)"><ion-icon name="compass-outline"></ion-icon>DISCOVER</a>
+      <a href="javascript:void(0)"><ion-icon name="compass-outline"></ion-icon><span class="nav__label">DISCOVER</span></a>
     </li>
     <li>
-      <a href="javascript:void(0)"><ion-icon name="radio-button-on-outline"></ion-icon>HOME</a>
+      <a href="javascript:void(0)"><ion-icon name="radio-button-on-outline"></ion-icon><span class="nav__label">HOME</span></a>
     </li>
     <li>
-      <a href="javascript:void(0)"><ion-icon name="settings-outline"></ion-icon>SETTINGS</a>
+      <a href="javascript:void(0)"><ion-icon name="settings-outline"></ion-icon><span class="nav__label">SETTINGS</span></a>
     </li>
     <li (click)="toggleMobileNavBar()">
-      <ion-icon name="eye-off-outline"></ion-icon>HIDE
+      <ion-icon name="eye-off-outline"></ion-icon><span class="nav__label">HIDE</span>
     </li>
   </ul>
 </nav>

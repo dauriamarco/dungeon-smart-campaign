@@ -1,4 +1,36 @@
 <div class="dashboard page-content">
+  <!-- HEADER -->
+  <div class="dsc-header dashboard__header">
+    <h1>
+      Dashboard
+    </h1>
+    <ion-breadcrumbs>
+      <ion-breadcrumb href="#">
+        Home
+      </ion-breadcrumb>
+      <ion-breadcrumb href="#electronics">
+        Something
+      </ion-breadcrumb>
+      <ion-breadcrumb href="#photography">
+        Dashboard
+      </ion-breadcrumb>
+    </ion-breadcrumbs>    
+    <p>
+      Manage your <span class="highlight">character sheets</span> in one place. Have quick access to stats and notes.
+    </p>
+  </div>
+
+  <!-- QUICK SHEETS -->
+  <div class="dashboard__sheets">
+    <div class="dsc-card dashboard__sheets__add">
+      <ion-icon name="add-outline"></ion-icon>
+    </div>
+    <ng-container *ngFor="let item of notes">
+      <div class="dsc-card dashboard__sheet">
+        01
+      </div>
+    </ng-container>
+  </div>
 
   <section class="dashboard__left">
     <!-- CHARACTER BOX -->
@@ -138,6 +170,14 @@
         </ng-container>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <div class="dashboard__right__footer">
+      <button class="button button-outline button-cancel">CANCEL</button>
+      <button class="button button-primary">
+        <ion-icon name="document-outline" class="button__icon"></ion-icon> GENERATE PDF
+      </button>
+    </div>
   </section>
 </div>
 
